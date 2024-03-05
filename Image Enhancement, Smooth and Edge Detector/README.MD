@@ -51,6 +51,10 @@ The process is following:
 
 
 #### 2.3.2 Marr Hidreth
+The Process of Marr Hidreth edge detection algorithm can be broken down into 3 different steps: 
+1. Apply a Gaussian filter to smooth the image to remove the noise. 
+2. Apply the Laplacian of the Gaussian filter to approximate a second derivative measurement on the image.
+3. Find Zero-Crossing pixels on the image to obtain the edges.
 
 #### 2.3.3 Sobel
 
