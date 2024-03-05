@@ -4,7 +4,6 @@
 In this program, image enhancement techniques, image smooth techniques, and edge detectors are implemented to do the image process for 3 given images. This program aims to practice image processing skills and find the best strategy to improve and detect the edges of the given image MRI.pgm with the implemented image processing functions.
 
 ## 2. Implementation
-1
 
 ### 2.1 Image Enhancement Techniques
 
@@ -57,15 +56,30 @@ The Process of Marr Hidreth edge detection algorithm can be broken down into 3 d
 3. Find Zero-Crossing pixels on the image to obtain the edges.
 
 #### 2.3.3 Sobel
+The Sobel filter is used to detect the edges of the image. Specifically, it uses two filters to detect horizontal and vertical edges. Then merge two edges and map all values of edges to 0~255.
 
 #### 2.3.4 Laplacian
+Laplacian is a kind of differential operator, its application can enhance the region of sudden grayscale changes in the image, and weaken the slow-changing area of grayscale.
 
 ### 2.4 GUI
+Use Tkinter to construct the GUI system. The main window(right) contains functions users can use(4 image enhancement functions, 3 image smooth functions, and 4 edge detector functions) and record the image process(lower-right of the main window). Users can also choose and reset images in the main window. The sub-window(left) shows the image. The screenshots are as follows:
+![2-4](imgs/2-4.jpg)
 
 ## 3. Experiment
+The first step is to apply image enhancement to the MRI.pgm given the 4image enhancement functions.
+![3-1](imgs/3-1.jpg)
+
+
+After the image enhancement, histogram stretching and histogram equalization have better performance. The second step is to apply the median filter to reduce noise since noise would make errors in the edge detector. The final step is applying an edge detector to the processed images. The images which are enhanced by histogram stretching and detected by 4 edge detectors are as follows:
+![3-2](imgs/3-2.jpg)
+
+The images which are enhanced by histogram equalization and detected by 4 edge detectors are as follows:
+![3-3](imgs/3-3.jpg)
 
 ## 4. Conclusion
-
 ### 4.1 Discussion
+The best strategy to improve and detect the edges of image MRI.pgm is to use histogram stretching to do the image enhancement. Then twice the median filter to remove the noise. Finally applying the canny edge detector to do the edge detection. The final image is like this:
+![4-1](imgs/4-1.jpg)
 
-### 4.2 Result
+### 4.2 Result of Other Images
+![4-2](imgs/4-2.jpg)
