@@ -63,7 +63,8 @@ Laplacian is a kind of differential operator, its application can enhance the re
 
 ### 2.4 GUI
 Use Tkinter to construct the GUI system. The main window(right) contains functions users can use(4 image enhancement functions, 3 image smooth functions, and 4 edge detector functions) and record the image process(lower-right of the main window). Users can also choose and reset images in the main window. The sub-window(left) shows the image. The screenshots are as follows:
-![2-4](imgs/2-4.jpg)
+
+<img src="imgs/2-4.jpg" width="600" height="600">
 
 ## 3. Experiment
 The first step is to apply image enhancement to the MRI.pgm given the 4image enhancement functions.
