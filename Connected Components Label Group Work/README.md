@@ -30,7 +30,7 @@ Firstly, a list that is defined as [[-1, 0], [0, 1], [1, 0], [0, -1]] is used to
 # Generate Ordered Sequence
 The upper left pixel is used as our original ‘current pixel’ at the beginning. Then find the next pixel in the clockwise direction. The ‘current pixel’ is the center of the clockwise rotation search. When the next pixel is found, the new found pixel would replace the old ‘current pixel’ and the algorithm would continue to find the new next pixel. The algorithm would not stop until the original start pixel is found. Finally the array ‘periphery_order’ forms. I traverse the sequence of the ‘periphery_order’ and accumulate the distance of each neighbor pixel to get the perimeter of a connected component.
 
-![Compute Perimeter Algorithm](imgs/Compute Perimeter Algorithm.jpg)
+![Compute-Perimeter-Algorithm](imgs/Compute-Perimeter-Algorithm.jpg)
   
 # Algorithm of identifying similar connected components
 To find which connected components are similar, I can set some feature vectors and calculate the distance between the feature vectors. If the distance is less than a threshold, then the connected components are similar, otherwise not.
