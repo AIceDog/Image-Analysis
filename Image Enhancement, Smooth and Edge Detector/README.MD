@@ -7,9 +7,8 @@ In this program, image enhancement techniques, image smooth techniques, and edge
 
 ### 2.1 Image Enhancement Techniques
 
-
-
 #### 2.1.1 Histogram Stretching
+![2.1.1](imgs/2_1_1.jpg)
 
 #### 2.1.2 Power Law
 
@@ -45,4 +44,4 @@ In this program, image enhancement techniques, image smooth techniques, and edge
 
 ### 4.2 Result
 
-![union-find](imgs/union-find.jpg)
+
