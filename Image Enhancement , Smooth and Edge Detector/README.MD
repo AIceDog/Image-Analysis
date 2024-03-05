@@ -4,7 +4,7 @@
 In this program, image enhancement techniques, image smooth techniques, and edge detectors are implemented to do the image process for 3 given images. This program aims to practice image processing skills and find the best strategy to improve and detect the edges of the given image MRI.pgm with the implemented image processing functions.
 
 ## 2. Implementation
-
+1
 
 ### 2.1 Image Enhancement Techniques
 
