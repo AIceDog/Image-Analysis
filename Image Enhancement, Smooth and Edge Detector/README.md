@@ -79,7 +79,8 @@ The images which are enhanced by histogram equalization and detected by 4 edge d
 ## 4. Conclusion
 ### 4.1 Discussion
 The best strategy to improve and detect the edges of image MRI.pgm is to use histogram stretching to do the image enhancement. Then twice the median filter to remove the noise. Finally applying the canny edge detector to do the edge detection. The final image is like this:
-![4-1](imgs/4-1.jpg)
+
+<img src="imgs/4-1.jpg" width="250" height="250">
 
 ### 4.2 Result of Other Images
 ![4-2](imgs/4-2.jpg)
