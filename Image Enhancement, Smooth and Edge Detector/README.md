@@ -36,7 +36,7 @@ The Gaussian filter is the spatial filter used to remove Gaussian noise in the i
 The Canny edge detection algorithm is a multi-stage process to detect a wide range of edges in images. It can be broken down into five different steps:
 1. Apply a Gaussian filter to smooth the image to remove the noise.
 2. Find the intensity gradients of the image by using Sobel Filter.
-3. Apply Non-Maximum Suppression to find which pixels are the maximum in the gradient direction.**
+3. Apply Non-Maximum Suppression to find which pixels are the maximum in the gradient direction.
 ![2-3-1](imgs/2-3-1.jpg)
 4. Apply a double threshold to determine potential edges.
 5. Track edge by hysteresis: Finalize the detection of edges by suppressing all the other edges that are weak and not connected to strong edges(using Depth-First-Search to find the weak edges which are connected to strong edges).
