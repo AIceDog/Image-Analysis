@@ -1,4 +1,4 @@
-# Connected Components Labeling for Image Analysis
+# Connected Components Labeling For Image Analysis
 
 ## About This Project
 
@@ -14,7 +14,28 @@ To get the connected components, I use two pass algorithm and union-find data st
 
 # Union-Find
 I use an array named ‘parent’ to store sets of equivalent labels in a tree. In the ‘parent’ array, the subscripts are possible labels and values are the labels of ‘parent’ nodes.
-![Example Image 2](imgs/union-find.jpg)
+
+![union-find](imgs/union-find.jpg)
+
+About the union-find there are two functions which are Find and ‘Union’. The ‘Find’ function utilizing the ‘parent’ array, searches the root of one label and returns the root. The ‘Union’ function merges two sets containing the given label x and the given label y and then modifies the ‘parent’ array.
+
+# Two Pass Algorithm
+
+The first pass is to assign temporary labels to each non-zero pixel based on its up and left neighbors. If it has two different labeled neighbors, then assign the pixel with a smaller value and use the ‘Union’ function to establish a relation between two neighbors. Then use the ‘parent’ array to record equivalences. The second pass to replace each temporary label with the smallest label of its equivalence class using the ‘Find’ function.
+
+# Compute Perimeter Algorithm
+# Find Peripheral Pixels
+Firstly, a list that is defined as [[-1, 0], [0, 1], [1, 0], [0, -1]] is used to find whether peripheral pixels of each tested pixel are all in the connected components. If not, the tested pixel is peripheral.
+
+# Generate Ordered Sequence
+The upper left pixel is used as our original ‘current pixel’ at the beginning. Then find the next pixel in the clockwise direction. The ‘current pixel’ is the center of the clockwise rotation search. When the next pixel is found, the new found pixel would replace the old ‘current pixel’ and the algorithm would continue to find the new next pixel. The algorithm would not stop until the original start pixel is found. Finally the array ‘periphery_order’ forms. I traverse the sequence of the ‘periphery_order’ and accumulate the distance of each neighbor pixel to get the perimeter of a connected component.
+
+![Compute Perimeter Algorithm](imgs/Compute Perimeter Algorithm.jpg)
+  
+# Algorithm of identifying similar connected components
+To find which connected components are similar, I can set some feature vectors and calculate the distance between the feature vectors. If the distance is less than a threshold, then the connected components are similar, otherwise not.
+
+![Math](imgs/Math.jpg)
 
 
 ## Two Example Images And Results Of Running The Program On Them
