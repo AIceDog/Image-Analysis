@@ -5,16 +5,17 @@ In this program, image enhancement techniques, image smooth techniques, and edge
 
 ## 2. Implementation
 
+
 ### 2.1 Image Enhancement Techniques
 
 #### 2.1.1 Histogram Stretching
-![2.1.1](imgs/2-1-1.jpg)
+![2-1-1](imgs/2-1-1.jpg)
 
 #### 2.1.2 Power Law
-![2.1.2](imgs/2-1-2.jpg)
+![2-1-2](imgs/2-1-2.jpg)
 
 #### 2.1.3 Logarithm
-![2.1.3](imgs/2-1-3.jpg)
+![2-1-3](imgs/2-1-3.jpg)
 
 #### 2.1.4 Histogram Equalization
 Histogram equalization is a method in image processing of contrast adjustment using the image's histogram.
@@ -37,7 +38,7 @@ The Canny edge detection algorithm is a multi-stage process to detect a wide ran
 1. Apply a Gaussian filter to smooth the image to remove the noise.
 2. Find the intensity gradients of the image by using Sobel Filter.
 3. Apply Non-Maximum Suppression to find which pixels are the maximum in the gradient direction.**
-![2.3.1](imgs/2-3-1.jpg)
+![2-3-1](imgs/2-3-1.jpg)
 4. Apply a double threshold to determine potential edges.
 5. Track edge by hysteresis: Finalize the detection of edges by suppressing all the other edges that are weak and not connected to strong edges(using Depth-First-Search to find the weak edges which are connected to strong edges).
 
@@ -64,5 +65,3 @@ The process is following:
 ### 4.1 Discussion
 
 ### 4.2 Result
-
-
