@@ -8,7 +8,7 @@ In this program, image enhancement techniques, image smooth techniques, and edge
 ### 2.1 Image Enhancement Techniques
 
 #### 2.1.1 Histogram Stretching
-![2.1.1](imgs/2_1_1.jpg)
+![2.1.1](imgs/2-1-1.jpg)
 
 #### 2.1.2 Power Law
 
