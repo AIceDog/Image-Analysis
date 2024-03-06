@@ -84,5 +84,23 @@ The following are some disadvantages of the Mean-Shift clustering algorithm:
 2.	Cannot have any direct control over the number of clusters but in some applications, we need a specific number of clusters.
 3.	It cannot differentiate between meaningful and meaningless modes.
 
-## 5. Other Examples
+## 5. More Other Examples
+### Example1:
+<img src="imgs/test1.jpg" height="500">
+<img src="imgs/test1_Result.png" height="500">
 
+### Example2:
+<img src="imgs/test2.jpg" height="500">
+<img src="imgs/test2_Result.png" height="500">
+
+### Example3:
+<img src="imgs/test3.jpg" height="500">
+<img src="imgs/test3_Result.png" height="500">
+
+### Example4:
+<img src="imgs/test4.jpg" height="500">
+<img src="imgs/test4_Result.png" height="500">
+
+### Example5:
+<img src="imgs/test5.jpg" height="500">
+<img src="imgs/test5_Result.png" height="500">
