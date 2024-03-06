@@ -33,13 +33,50 @@ The criterion for merging similar clusters is based on the shortest distance in 
 ### 2.3 Eliminate Small Regions
 Eliminating small regions is used to avoid over-segmentation. Small clusters would be assigned to big clusters.
 There are two steps to eliminate small regions:
+
 ①	Use row-by-row methods and union-find structure to merge pixels of similar color (or grayscale) row by row (like assignment 1). And regenerate the new clusters.
+
 ②	Set a threshold and regroup new clusters into two groups based on the pixel number of clusters. 
+
+In step ①：
+
+Like the connected component labeling algorithm, scan the pixels row by row to find pixels of which distances of color (or grayscale) space between those pixels are less than a specific threshold. 
+We use an array named ‘parent’ to store sets of equivalent labels in a tree. In the ‘parent’ array, the subscripts are possible labels and values are the labels of ‘parent’ nodes. 
+<img src="imgs/2.3.1.jpg" height="230px">
+
+About the union-find there are two functions which are Find and ‘Union’. The ‘Find’ function utilizing the ‘parent’ array, searches the root of one label and returns the root. The ‘Union’ function merges two sets containing the given label x and given label y and then modifies the ‘parent’ array.
+
+Use img_Label (2d array with shape rowNum × colNum) to mark pixel labels and  Use union-find to connect pixels based on labels.
+After connected component labeling, there will be several new clusters with same label and same color.
+
+In step ②：
+
+After step ① there are some new clusters (For example C_0, C_1, C_2, C_3, C_4), I divide those clusters based on the number of pixels into two groups. The largeClu_Pos in which the pixel number of each cluster is greater than 30 (For example C_0, C_1); The smallClu_Pos in which the pixel number of each cluster is less than 30 (For example C_2, C_3, C_4)
+
+Then create a 2d array named img_MarkSmallClu to mark which pixels are in large clusters and which pixels are in small clusters. If one pixel with coordinate (0, 1) is in a small cluster, then img_MarkSmallClu[0, 1] = 1, otherwise img_MarkSmallClu[0, 1] = 0
+
+To assign color to each small cluster, firstly compute the peripheral pixels of each small cluster. Then based on the peripheral pixels of each small cluster, find if one of the peripheral pixels is in a large cluster. If so, assign the color of the first-found large cluster to the corresponding small cluster.
+
+<img src="imgs/2.3.2.jpg" height="230px">
+
+For example, if there is a small cluster that has just one pixel(red one). We get it’s peripheral pixels(green pixels 1, 2, 3, 4). Then we use loop search for each peripheral pixel to find if one peripheral pixel is in a large cluster. If so, we assign the color of the first-found large cluster to the small cluster and exit the loop.
 
 
 ## 3. Segmentation Results Of 2 Color And 2 Gray Scale Images
+<img src="imgs/3.1.jpg" height="230px">
 
 ## 4. Brief Discussion Of Results
+The following are some advantages of the Mean-Shift clustering algorithm:
+1.	It does not need to make any model assumption as in K-means or Gaussian mixture.
+2.	It can also model the complex clusters which have nonconvex shapes.
+3.	It only needs one parameter named bandwidth which automatically determines the number of clusters.
+4.	There is no issue of local minima as in K-means.
+5.	No problem generated from outliers.
+
+The following are some disadvantages of the Mean-Shift clustering algorithm:
+1.	The effectiveness of this algorithm is not good enough which is time-consuming.
+2.	Cannot have any direct control over the number of clusters but in some applications, we need a specific number of clusters.
+3.	It cannot differentiate between meaningful and meaningless modes.
 
 ## 5. Other Examples
 
